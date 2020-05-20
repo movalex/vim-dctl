@@ -19,7 +19,7 @@ syn region  glslComment  matchgroup=glslCommentStart start="/\*" end="\*/" exten
 syn region  glslPreCondit       start="^\s*#\s*\(if\|ifdef\|ifndef\|else\|elif\|endif\)" skip="\\$" end="$" keepend
 syn region  glslDefine          start="^\s*#\s*\(define\|undef\)" skip="\\$" end="$" keepend
 syn keyword glslTokenConcat     ##
-syn keyword glslPredefinedMacro __LINE__ __FILE__ __VERSION__ GL_ES
+syn keyword glslPredefinedMacro __LINE__ __FILE__ __VERSION__ GL_ES __KERNEL__ __CONSTANTREF__ __TEXTURE2D__ __TEXTURE2D_WRITE__
 syn region  glslPreProc         start="^\s*#\s*\(error\|pragma\|extension\|version\|line\)" skip="\\$" end="$" keepend
 
 " Boolean Constants
@@ -639,6 +639,10 @@ syn keyword glslBuiltinFunction unpackSnorm4x8
 syn keyword glslBuiltinFunction unpackUnorm2x16
 syn keyword glslBuiltinFunction unpackUnorm4x8
 syn keyword glslBuiltinFunction usubBorrow
+
+syn keyword glslBuiltinFunction _tex2DVecN
+syn keyword glslBuiltinFunction _tex2DVec4Write
+syn keyword glslBuiltinFunction DEFINE_KERNEL_ITERATORS_XY
 
 hi def link glslConditional     Conditional
 hi def link glslRepeat          Repeat
